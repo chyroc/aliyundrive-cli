@@ -26,10 +26,11 @@ func (r *CommandDownload) Run() error {
 	}
 
 	err = r.cli.ali.File.DownloadFile(context.Background(), &aliyundrive.DownloadFileReq{
-		DriveID:      r.cli.driveID,
-		FileID:       file.FileID,
-		DistDir:      r.cli.downloadDir,
-		ConflictType: aliyundrive.DownloadFileConflictTypeAutoRename,
+		DriveID:         r.cli.driveID,
+		FileID:          file.FileID,
+		DistDir:         r.cli.downloadDir,
+		ConflictType:    aliyundrive.DownloadFileConflictTypeAutoRename,
+		ShowProgressBar: true,
 	})
 	if err != nil {
 		return err

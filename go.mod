@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/c-bata/go-prompt v0.2.6
-	github.com/chyroc/go-aliyundrive v0.1.0
+	github.com/chyroc/go-aliyundrive v0.1.1-0.20210915081719-f4d3baa9cf20
 	github.com/fatih/color v1.12.0
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3
 	github.com/olekukonko/tablewriter v0.0.5
@@ -12,6 +12,8 @@ require (
 )
 
 require (
+	github.com/VividCortex/ewma v1.1.1 // indirect
+	github.com/acarl005/stripansi v0.0.0-20180116102854-5a71ef0e047d // indirect
 	github.com/chyroc/gorequests v0.26.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/juju/go4 v0.0.0-20160222163258-40d72ab9641a // indirect
@@ -26,6 +28,7 @@ require (
 	github.com/rogpeppe/go-internal v1.6.1 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e // indirect
+	github.com/vbauerster/mpb/v5 v5.4.0 // indirect
 	golang.org/x/net v0.0.0-20210825183410-e898025ed96a // indirect
 	golang.org/x/sys v0.0.0-20210423082822-04245dca01da // indirect
 	golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543 // indirect
