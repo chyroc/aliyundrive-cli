@@ -2,7 +2,11 @@
 
 package internal
 
-import "golang.org/x/sys/unix"
+import (
+	"os"
+
+	"golang.org/x/sys/unix"
+)
 
 func IoctlGetTermios() *unix.Termios {
 	termios, _ := unix.IoctlGetTermios(int(os.Stdin.Fd()), unix.TCGETS)
