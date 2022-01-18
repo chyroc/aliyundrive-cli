@@ -12,7 +12,7 @@ import (
 func main() {
 	oldTermiosPtr, _ := unix.IoctlGetTermios(int(os.Stdin.Fd()), unix.TCGETS)
 	defer func() {
-        unix.IoctlSetTermios(int(os.Stdin.Fd()),unix.TCSETS,oldTermiosPtr)
+		unix.IoctlSetTermios(int(os.Stdin.Fd()), unix.TCSETS, oldTermiosPtr)
 	}()
 	cli := internal.NewCli()
 	fmt.Println("阿里云盘命令行客户端")
