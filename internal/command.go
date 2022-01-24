@@ -9,6 +9,20 @@ type Command interface {
 	Run() error
 }
 
+func print_command_usage() string {
+	var usage = `
+Only support the follow sub command:
+	1. cd            chdir
+	2. ls            list files
+	3. mkdir         create directory
+	4. rm            remove file or directory
+	5. upload        upload file
+	6. download      download file
+	7. mv            file or directory
+	7. help or ?     print help usage
+`
+	return usage
+}
 func (r *Cli) ParseCommand(input string) (Command, error) {
 	input = strings.TrimSpace(input)
 	if input == "" {
@@ -39,5 +53,8 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 		}
 		return &CommandMv{cli: r, from: strings.TrimSpace(l[0]), to: strings.TrimSpace(l[1])}, nil
 	}
-	return nil, fmt.Errorf("不支持的命令: %s", input)
+	if strings.HasPrefix(input, "help") || strings.HasPrefix(input, "?") {
+		return nil, fmt.Errorf("%s", print_command_usage())
+	}
+	return nil, fmt.Errorf("%s", print_command_usage())
 }
