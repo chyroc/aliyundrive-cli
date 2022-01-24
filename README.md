@@ -5,7 +5,7 @@
 ## 安装
 
 ```shell
-go get github.com/chyroc/aliyundrive-cli
+go install github.com/chyroc/aliyundrive-cli@latest
 ```
 
 ## 使用
