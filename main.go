@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"path"
 
 	"runtime/debug"
 
@@ -12,9 +13,13 @@ import (
 )
 
 var version bool
+var dir string
 
 func init() {
+	home, _ := os.UserHomeDir()
+	downloadDir := path.Join(home, "/Downloads/aliyundrive-cli")
 	flag.BoolVar(&version, "version", false, "Print program version")
+	flag.StringVar(&dir, "dir", downloadDir, "File download directory")
 	if !flag.Parsed() {
 		flag.Parse()
 	}
@@ -31,7 +36,9 @@ func main() {
 	oldTermiosPtr := internal.IoctlGetTermios()
 	defer internal.IoctlSetTermios(oldTermiosPtr)
 
-	cli := internal.NewCli()
+	println(dir)
+	os.Stdout.Sync()
+	cli := internal.NewCli(dir)
 	fmt.Println("阿里云盘命令行客户端")
 
 	p := prompt.New(cli.Executor, cli.Completer, prompt.OptionLivePrefix(cli.Prefix))
