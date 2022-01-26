@@ -35,8 +35,6 @@ func init() {
 func main() {
 	oldTermiosPtr := internal.IoctlGetTermios()
 	defer internal.IoctlSetTermios(oldTermiosPtr)
-
-	println(dir)
 	os.Stdout.Sync()
 	cli := internal.NewCli(dir)
 	fmt.Println("阿里云盘命令行客户端")
