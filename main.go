@@ -39,6 +39,12 @@ func main() {
 	cli := internal.NewCli(dir)
 	fmt.Println("阿里云盘命令行客户端")
 
-	p := prompt.New(cli.Executor, cli.Completer, prompt.OptionLivePrefix(cli.Prefix))
+	p := prompt.New(cli.Executor, cli.Completer, prompt.OptionLivePrefix(cli.Prefix), prompt.OptionAddKeyBind(prompt.KeyBind{
+		Key: prompt.ControlC,
+		Fn: func(b *prompt.Buffer) {
+			internal.Cancel()
+		},
+	}))
+
 	p.Run()
 }

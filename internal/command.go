@@ -20,6 +20,7 @@ Only support the follow sub command:
 	6. download      download file
 	7. mv            file or directory
 	8. help or ?     print help usage
+	9. exit          exit program
 `
 	return usage
 }
@@ -30,6 +31,9 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 	}
 	if input == "ls" || strings.HasPrefix(input, "ls ") {
 		return &CommandLs{cli: r}, nil
+	}
+	if input == "exit" {
+		Exit(0)
 	}
 	if strings.HasPrefix(input, "cd ") {
 		return &CommandCd{cli: r, dir: strings.TrimSpace(input[len("cd "):])}, nil
