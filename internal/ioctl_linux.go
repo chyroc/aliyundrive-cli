@@ -9,8 +9,11 @@ import (
 	"golang.org/x/sys/unix"
 )
 
+var term *unix.Termios
+
 func IoctlGetTermios() *unix.Termios {
 	termios, _ := unix.IoctlGetTermios(int(os.Stdin.Fd()), unix.TCGETS)
+	term = termios
 	return termios
 }
 
