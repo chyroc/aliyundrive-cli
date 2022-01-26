@@ -19,7 +19,7 @@ Only support the follow sub command:
 	5. upload        upload file
 	6. download      download file
 	7. mv            file or directory
-	7. help or ?     print help usage
+	8. help or ?     print help usage
 `
 	return usage
 }
