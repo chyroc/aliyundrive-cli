@@ -4,12 +4,12 @@ go 1.17
 
 require (
 	github.com/c-bata/go-prompt v0.2.6
-	github.com/chyroc/go-aliyundrive v0.1.1-0.20220113094039-56160564d5f8
+	github.com/chyroc/go-aliyundrive v0.1.1-0.20220126092443-972a465e859d
 	github.com/fatih/color v1.12.0
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3
 	github.com/olekukonko/tablewriter v0.0.5
 	github.com/stretchr/testify v1.7.0
-	golang.org/x/sys v0.0.0-20220111092808-5a964db01320
+	golang.org/x/sys v0.0.0-20220114195835-da31bd327af9
 )
 
 require (
@@ -27,8 +27,8 @@ require (
 	github.com/schollz/progressbar/v3 v3.8.5 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e // indirect
-	golang.org/x/crypto v0.0.0-20220112180741-5e0467b6c7ce // indirect
-	golang.org/x/net v0.0.0-20220111093109-d55c255bac03 // indirect
+	golang.org/x/crypto v0.0.0-20220126234351-aa10faf2a1f8 // indirect
+	golang.org/x/net v0.0.0-20220121210141-e204ce36a2ba // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c // indirect
 )
