@@ -26,7 +26,8 @@ func (r *CommandDownload) Run() error {
 	if file == nil {
 		return fmt.Errorf("不存在文件 %q", r.name)
 	}
-	return r.download(r.cli.downloadDir, file)
+	go r.download(r.cli.downloadDir, file)
+	return nil
 }
 
 func (r *CommandDownload) download(dir string, file *aliyundrive.File) error {
