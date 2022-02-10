@@ -8,6 +8,10 @@
 go install github.com/chyroc/aliyundrive-cli@latest
 ```
 
+## 交流
+
+[点击进入飞书群聊](https://applink.feishu.cn/client/chat/chatter/add_by_link?link_token=994r0363-759c-47f8-a392-f1be6349c547)
+
 ## 使用
 
 | 功能        | 截图                                |
