@@ -9,8 +9,7 @@ type Command interface {
 	Run() error
 }
 
-func print_command_usage() string {
-	var usage = `
+const CommandUsage = `
 Only support the follow sub command:
 	1. cd            chdir
 	2. ls            list files
@@ -22,8 +21,7 @@ Only support the follow sub command:
 	8. help or ?     print help usage
 	9. exit          exit program
 `
-	return usage
-}
+
 func (r *Cli) ParseCommand(input string) (Command, error) {
 	input = strings.TrimSpace(input)
 	if input == "" {
@@ -58,7 +56,7 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 		return &CommandMv{cli: r, from: strings.TrimSpace(l[0]), to: strings.TrimSpace(l[1])}, nil
 	}
 	if strings.HasPrefix(input, "help") || strings.HasPrefix(input, "?") {
-		return nil, fmt.Errorf("%s", print_command_usage())
+		return nil, fmt.Errorf("%s", CommandUsage)
 	}
-	return nil, fmt.Errorf("%s", print_command_usage())
+	return nil, fmt.Errorf("%s", CommandUsage)
 }

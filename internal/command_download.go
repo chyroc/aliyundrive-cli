@@ -65,5 +65,4 @@ func (r *CommandDownload) download(dir string, file *aliyundrive.File) error {
 		}
 	}
 	return nil
-
 }

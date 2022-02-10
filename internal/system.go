@@ -14,6 +14,7 @@ func Cancel() {
 		fs = fs[1:]
 	}
 }
+
 func Exit(code int) {
 	IoctlSetTermios(term)
 	os.Exit(code)

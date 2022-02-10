@@ -5,15 +5,16 @@ import (
 	"fmt"
 	"os"
 	"path"
-
 	"runtime/debug"
 
 	"github.com/c-bata/go-prompt"
 	"github.com/chyroc/aliyundrive-cli/internal"
 )
 
-var version bool
-var dir string
+var (
+	version bool
+	dir     string
+)
 
 func init() {
 	home, _ := os.UserHomeDir()
