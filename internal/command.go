@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 )
@@ -56,7 +57,7 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 		return &CommandMv{cli: r, from: strings.TrimSpace(l[0]), to: strings.TrimSpace(l[1])}, nil
 	}
 	if strings.HasPrefix(input, "help") || strings.HasPrefix(input, "?") {
-		return nil, fmt.Errorf("%s", CommandUsage)
+		return nil, errors.New(CommandUsage)
 	}
-	return nil, fmt.Errorf("%s", CommandUsage)
+	return nil, errors.New(CommandUsage)
 }
