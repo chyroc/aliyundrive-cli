@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"errors"
 	"fmt"
 	"strings"
 )
@@ -9,8 +10,7 @@ type Command interface {
 	Run() error
 }
 
-func print_command_usage() string {
-	var usage = `
+const CommandUsage = `
 Only support the follow sub command:
 	1. cd            chdir
 	2. ls            list files
@@ -19,10 +19,10 @@ Only support the follow sub command:
 	5. upload        upload file
 	6. download      download file
 	7. mv            file or directory
-	7. help or ?     print help usage
+	8. help or ?     print help usage
+	9. exit          exit program
 `
-	return usage
-}
+
 func (r *Cli) ParseCommand(input string) (Command, error) {
 	input = strings.TrimSpace(input)
 	if input == "" {
@@ -30,6 +30,9 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 	}
 	if input == "ls" || strings.HasPrefix(input, "ls ") {
 		return &CommandLs{cli: r}, nil
+	}
+	if input == "exit" {
+		Exit(0)
 	}
 	if strings.HasPrefix(input, "cd ") {
 		return &CommandCd{cli: r, dir: strings.TrimSpace(input[len("cd "):])}, nil
@@ -54,7 +57,7 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 		return &CommandMv{cli: r, from: strings.TrimSpace(l[0]), to: strings.TrimSpace(l[1])}, nil
 	}
 	if strings.HasPrefix(input, "help") || strings.HasPrefix(input, "?") {
-		return nil, fmt.Errorf("%s", print_command_usage())
+		return nil, errors.New(CommandUsage)
 	}
-	return nil, fmt.Errorf("%s", print_command_usage())
+	return nil, errors.New(CommandUsage)
 }

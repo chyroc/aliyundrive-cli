@@ -28,12 +28,10 @@ type Cli struct {
 	files         []*aliyundrive.File
 }
 
-func NewCli() *Cli {
+func NewCli(homedir string) *Cli {
 	fileStack := stack.New()
 	fileStack.Push("root")
-	home, _ := os.UserHomeDir()
-	downloadDir := home + "/Downloads/aliyundrive-cli"
-	_ = os.MkdirAll(downloadDir, 0o777)
+	_ = os.MkdirAll(homedir, 0o777)
 
 	return &Cli{
 		ali:           aliyundrive.New(),
@@ -41,7 +39,7 @@ func NewCli() *Cli {
 		fileIDs:       []string{"root"},
 		currentFileID: "root",
 		fileStack:     fileStack,
-		downloadDir:   downloadDir,
+		downloadDir:   homedir,
 	}
 }
 
