@@ -21,12 +21,21 @@ func (r *CommandUpload) Run() error {
 	if err := r.cli.setupDrive(); err != nil {
 		return err
 	}
+	defer r.cli.refreshFiles()
 
 	file := r.file
-	err := r.upload(file, r.cli.driveID, r.cli.currentFileID)
-	go r.cli.refreshFiles()
+	files, err := filepath.Glob(file)
+	if err != nil {
 
-	return err
+		return err
+	}
+	for _, file := range files {
+		err = r.upload(file, r.cli.driveID, r.cli.currentFileID)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
 }
 
 func (r *CommandUpload) upload(file string, driveID string, fileID string) error {
