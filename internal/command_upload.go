@@ -3,6 +3,8 @@ package internal
 import (
 	"context"
 	"fmt"
+	"io/ioutil"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -21,6 +23,13 @@ func (r *CommandUpload) Run() error {
 	}
 
 	file := r.file
+	err := r.upload(file, r.cli.driveID, r.cli.currentFileID)
+	go r.cli.refreshFiles()
+
+	return err
+}
+
+func (r *CommandUpload) upload(file string, driveID string, fileID string) error {
 	if strings.HasPrefix(file, "~") {
 		home, _ := os.UserHomeDir()
 		file = home + file[1:]
@@ -29,21 +38,44 @@ func (r *CommandUpload) Run() error {
 	if err != nil {
 		return err
 	}
-	if _, err := os.Stat(file); err != nil {
-		return err
-	}
-
-	_, err = r.cli.ali.File.UploadFile(context.Background(), &aliyundrive.UploadFileReq{
-		DriveID:  r.cli.driveID,
-		ParentID: r.cli.currentFileID,
-		FilePath: file,
-	})
+	fileInfo, err := os.Stat(file)
 	if err != nil {
 		return err
 	}
-	fmt.Println("上传成功.")
-
-	go r.cli.refreshFiles()
-
+	if !fileInfo.IsDir() {
+		_, err = r.cli.ali.File.UploadFile(context.Background(), &aliyundrive.UploadFileReq{
+			DriveID:  driveID,
+			ParentID: fileID,
+			FilePath: file,
+		})
+		if err != nil {
+			return err
+		}
+		fmt.Printf("%s 上传成功.\n", file)
+	} else {
+		// mkdir
+		files, err := ioutil.ReadDir(file)
+		if err != nil {
+			log.Fatal(err)
+		}
+		response, err := r.cli.ali.File.CreateFolder(context.Background(), &aliyundrive.CreateFolderReq{
+			DriveID:      r.cli.driveID,
+			ParentFileID: r.cli.currentFileID,
+			Name:         fileInfo.Name(),
+		})
+		if err != nil {
+			return err
+		}
+		if err := r.cli.checkoutDir(response.FileID, fileInfo.Name()); err != nil {
+			return err
+		}
+		for _, subFile := range files {
+			err := r.upload(filepath.Join(file, subFile.Name()), response.DriveID, response.FileID)
+			if err != nil {
+				return err
+			}
+			fmt.Printf("%s 上传成功.\n", filepath.Join(file, subFile.Name()))
+		}
+	}
 	return nil
 }
