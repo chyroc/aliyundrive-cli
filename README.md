@@ -25,6 +25,7 @@ go install github.com/chyroc/aliyundrive-cli@latest
 | 7. 上传文件   | ![](./screenshots/7.upload.png)   |
 | 8. 下载文件   | ![](./screenshots/8.download.png) |
 
+
 ## 其他
 
 - 基于 [SDK chyroc/go-aliyundrive](https://github.com/chyroc/go-aliyundrive) 完成

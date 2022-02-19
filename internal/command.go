@@ -19,8 +19,9 @@ Only support the follow sub command:
 	5. upload        upload file
 	6. download      download file
 	7. mv            file or directory
-	8. help or ?     print help usage
-	9. exit          exit program
+	8. 2tv           send video to tv
+	9. help or ?     print help usage
+	10. exit         exit program
 `
 
 func (r *Cli) ParseCommand(input string) (Command, error) {
@@ -42,6 +43,9 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 	}
 	if strings.HasPrefix(input, "rm ") {
 		return &CommandRm{cli: r, name: strings.TrimSpace(input[len("rm "):])}, nil
+	}
+	if strings.HasPrefix(input, "2tv ") {
+		return &CommandToTv{cli: r, name: strings.TrimSpace(input[len("2tv "):])}, nil
 	}
 	if strings.HasPrefix(input, "upload ") {
 		return &CommandUpload{cli: r, file: strings.TrimSpace(input[len("upload "):])}, nil

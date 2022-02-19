@@ -26,7 +26,6 @@ func (r *CommandUpload) Run() error {
 	file := r.file
 	files, err := filepath.Glob(file)
 	if err != nil {
-
 		return err
 	}
 	for _, file := range files {
