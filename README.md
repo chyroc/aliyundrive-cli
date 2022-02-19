@@ -24,6 +24,9 @@ go install github.com/chyroc/aliyundrive-cli@latest
 | 6. 删除文件   | ![](./screenshots/6.rm.png)       |
 | 7. 上传文件   | ![](./screenshots/7.upload.png)   |
 | 8. 下载文件   | ![](./screenshots/8.download.png) |
+| 9. 投屏视频到电视   | [view on youtube](https://www.youtube.com/watch?v=N74dQ2e9tMo) |
+
+https://user-images.githubusercontent.com/15604894/154791897-203bc225-9056-4c72-84c6-9394f1cc3da2.MOV
 
 
 ## 其他
