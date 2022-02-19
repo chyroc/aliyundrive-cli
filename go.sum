@@ -4,6 +4,8 @@ github.com/chyroc/go-aliyundrive v0.3.0 h1:9KRa1xocjofPzKhNvA+xZLPyGLPB2zxYEVJle
 github.com/chyroc/go-aliyundrive v0.3.0/go.mod h1:FH3CjiG626gUh5DdlA1TjMzoZVNI/b9RXn3lWqTrotg=
 github.com/chyroc/go2tv v1.13.0 h1:jTfhoFS95QFJYYEeBI5v0TVNlSyaEMx+AhvANdyDxEE=
 github.com/chyroc/go2tv v1.13.0/go.mod h1:ABGOBJOi6rEBCTY8hLmbek/lI7vSEipdRPO0QBtgDIo=
+github.com/chyroc/go2tv v1.14.0 h1:TdKIfgGACQ3HjxhT00+RMTCxwTSsNRV6dttvK0efKHk=
+github.com/chyroc/go2tv v1.14.0/go.mod h1:ABGOBJOi6rEBCTY8hLmbek/lI7vSEipdRPO0QBtgDIo=
 github.com/chyroc/gorequests v0.30.0 h1:S2oQ0hf+ljuG2q/vmDB3vxc+1HAuUeEthnpQ2uHueRk=
 github.com/chyroc/gorequests v0.30.0/go.mod h1:CZDj+0SZvzDtZsFKnX971eHls2bwUtGXTcmQ6by9ONA=
 github.com/chyroc/persistent-cookiejar v0.1.0 h1:F7rGmT5sShfskgbZmN9MOUJS8CwcSsm8KbErcAPUO5s=
