@@ -19,9 +19,10 @@ Only support the follow sub command:
 	5. upload        upload file
 	6. download      download file
 	7. mv            file or directory
-	8. 2tv           send video to tv
-	9. help or ?     print help usage
-	10. exit         exit program
+	8. rename        rename file or directory
+	9. 2tv           send video to tv
+	10. help or ?    print help usage
+	11. exit         exit program
 `
 
 func (r *Cli) ParseCommand(input string) (Command, error) {
@@ -59,6 +60,13 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 			return nil, fmt.Errorf("mv 命令不合法，需要两个以空格区分的参数，如: mv old new")
 		}
 		return &CommandMv{cli: r, from: l[0], to: l[1]}, nil
+	}
+	if strings.HasPrefix(input, "rename ") {
+		l := splitSpace(strings.TrimSpace(input[len("rename "):]))
+		if len(l) != 2 {
+			return nil, fmt.Errorf("rename 命令不合法，需要两个以空格区分的参数，如: rename old new")
+		}
+		return &CommandRename{cli: r, from: l[0], to: l[1]}, nil
 	}
 	if strings.HasPrefix(input, "help") || strings.HasPrefix(input, "?") {
 		return nil, errors.New(CommandUsage)
