@@ -34,30 +34,31 @@ func inText(key, text string) bool {
 }
 
 func splitSpace(s string) []string {
-	res := []string{}
-	buf := []rune{}
-	z := false
-	for _, v := range []rune(s) {
-		if v == '\\' {
-			z = true
-			continue
-		} else if v == ' ' {
-			if z {
-				buf = append(buf, v)
-				z = false
-			} else {
-				z = false
-				if len(buf) > 0 {
-					res = append(res, string(buf))
-					buf = []rune{}
-				}
-			}
-		} else {
-			buf = append(buf, v)
+	s = strings.Trim(s, " ")
+	var parmChars = []rune(s)
+	var inSingleQuote = false
+	var inDoubleQuote = false
+	for index, ch := range parmChars {
+		if ch == '"' && !inSingleQuote {
+			inDoubleQuote = !inDoubleQuote
+			parmChars[index] = '\n'
+		}
+		if parmChars[index] == '\'' && !inDoubleQuote {
+			inSingleQuote = !inSingleQuote
+			parmChars[index] = '\n'
+		}
+		if !inSingleQuote && !inDoubleQuote && parmChars[index] == ' ' {
+			parmChars[index] = '\n'
 		}
 	}
-	if len(buf) > 0 {
-		res = append(res, string(buf))
+	var list = strings.Split(string(parmChars), "\n")
+	var result []string
+	for _, s := range list {
+		if s == "" {
+			continue
+		}
+		result = append(result, s)
 	}
-	return res
+	return result
+
 }

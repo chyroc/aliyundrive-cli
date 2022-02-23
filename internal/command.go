@@ -58,7 +58,7 @@ func (r *Cli) ParseCommand(input string) (Command, error) {
 		if len(l) != 2 {
 			return nil, fmt.Errorf("mv 命令不合法，需要两个以空格区分的参数，如: mv old new")
 		}
-		return &CommandMv{cli: r, from: strings.TrimSpace(l[0]), to: strings.TrimSpace(l[1])}, nil
+		return &CommandMv{cli: r, from: l[0], to: l[1]}, nil
 	}
 	if strings.HasPrefix(input, "help") || strings.HasPrefix(input, "?") {
 		return nil, errors.New(CommandUsage)

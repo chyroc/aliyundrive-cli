@@ -54,6 +54,5 @@ func Test_inText(t *testing.T) {
 func Test_splitSpace(t *testing.T) {
 	as := assert.New(t)
 
-	as.Equal([]string{"a b", "c"}, splitSpace(`a\ b c`))
-	as.Equal([]string{"a b", "c"}, splitSpace(`a\ b c  `))
+	as.Equal([]string{"Go 进阶训练营-2.微服务可用性设计（下）2(224732).mp4", "Go 进阶训练营-2.mp4"}, splitSpace(`"Go 进阶训练营-2.微服务可用性设计（下）2(224732).mp4" "Go 进阶训练营-2.mp4"`))
 }

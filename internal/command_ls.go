@@ -2,6 +2,7 @@ package internal
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/chyroc/go-aliyundrive"
 )
@@ -53,7 +54,7 @@ func (r *Cli) findFileByName(name string) (*aliyundrive.File, error) {
 			return v, nil
 		}
 	}
-	return nil, nil
+	return nil, fmt.Errorf("文件: \"%s\" 未找到", name)
 }
 
 func (r *Cli) removeByName(name string) (*aliyundrive.File, error) {
