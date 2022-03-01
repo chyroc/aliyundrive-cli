@@ -7,11 +7,19 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-var term *unix.Termios
+type Termios struct {
+	term *unix.Termios
+}
 
-func IoctlGetTermios() *unix.Termios {
+var term *Termios
+
+func GetTermios() *Termios {
+	return term
+}
+
+func IoctlGetTermios() *Termios {
 	return nil
 }
 
-func IoctlSetTermios(termios *unix.Termios) {
+func IoctlSetTermios(termios *Termios) {
 }

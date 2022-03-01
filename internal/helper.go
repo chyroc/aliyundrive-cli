@@ -35,9 +35,9 @@ func inText(key, text string) bool {
 
 func splitSpace(s string) []string {
 	s = strings.Trim(s, " ")
-	var parmChars = []rune(s)
-	var inSingleQuote = false
-	var inDoubleQuote = false
+	parmChars := []rune(s)
+	inSingleQuote := false
+	inDoubleQuote := false
 	for index, ch := range parmChars {
 		if ch == '"' && !inSingleQuote {
 			inDoubleQuote = !inDoubleQuote
@@ -51,7 +51,7 @@ func splitSpace(s string) []string {
 			parmChars[index] = '\n'
 		}
 	}
-	var list = strings.Split(string(parmChars), "\n")
+	list := strings.Split(string(parmChars), "\n")
 	var result []string
 	for _, s := range list {
 		if s == "" {
@@ -60,5 +60,4 @@ func splitSpace(s string) []string {
 		result = append(result, s)
 	}
 	return result
-
 }
