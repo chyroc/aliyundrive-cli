@@ -29,7 +29,7 @@ func (r *CommandUpload) Run() error {
 		return err
 	}
 	if len(files) == 0 {
-		return fmt.Errorf("找不到文件 \"%s\"", file)
+		return fmt.Errorf("找不到文件 %q", file)
 	}
 	go func() {
 		for _, file := range files {
