@@ -13,9 +13,7 @@ import (
 
 func (r *Cli) setupDrive() (finalErr error) {
 	r.setupDriveOnce.Do(func() {
-		user, err := r.ali.Auth.LoginByQrcode(context.TODO(),
-			&aliyundrive.LoginByQrcodeReq{
-				SmallQrCode: true})
+		user, err := r.ali.Auth.LoginByQrcode(context.TODO(), &aliyundrive.LoginByQrcodeReq{SmallQrCode: true})
 		if err != nil {
 			finalErr = err
 			return
