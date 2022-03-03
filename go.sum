@@ -1,11 +1,11 @@
 github.com/c-bata/go-prompt v0.2.6 h1:POP+nrHE+DfLYx370bedwNhsqmpCUynWPxuHi0C5vZI=
 github.com/c-bata/go-prompt v0.2.6/go.mod h1:/LMAke8wD2FsNu9EXNdHxNLbd9MedkPnCdfpU9wwHfY=
-github.com/chyroc/go-aliyundrive v0.3.0 h1:9KRa1xocjofPzKhNvA+xZLPyGLPB2zxYEVJle4FSHjs=
-github.com/chyroc/go-aliyundrive v0.3.0/go.mod h1:FH3CjiG626gUh5DdlA1TjMzoZVNI/b9RXn3lWqTrotg=
+github.com/chyroc/go-aliyundrive v0.5.0 h1:A7YWu+uOmVS7MIh0iVFCqv/8btv/LzC3+U/NQYLSyGA=
+github.com/chyroc/go-aliyundrive v0.5.0/go.mod h1:hxb8ATuoODZXc0L6g4kFAXtbxeeZaTCIEXeyDgAkRAY=
 github.com/chyroc/go2tv v1.14.0 h1:TdKIfgGACQ3HjxhT00+RMTCxwTSsNRV6dttvK0efKHk=
 github.com/chyroc/go2tv v1.14.0/go.mod h1:ABGOBJOi6rEBCTY8hLmbek/lI7vSEipdRPO0QBtgDIo=
-github.com/chyroc/gorequests v0.30.0 h1:S2oQ0hf+ljuG2q/vmDB3vxc+1HAuUeEthnpQ2uHueRk=
-github.com/chyroc/gorequests v0.30.0/go.mod h1:CZDj+0SZvzDtZsFKnX971eHls2bwUtGXTcmQ6by9ONA=
+github.com/chyroc/gorequests v0.32.0 h1:+UVJd/qA/b0W0/gzh9K+VGkpTqctrjuVvD2rB6hvlwI=
+github.com/chyroc/gorequests v0.32.0/go.mod h1:CZDj+0SZvzDtZsFKnX971eHls2bwUtGXTcmQ6by9ONA=
 github.com/chyroc/persistent-cookiejar v0.1.0 h1:F7rGmT5sShfskgbZmN9MOUJS8CwcSsm8KbErcAPUO5s=
 github.com/chyroc/persistent-cookiejar v0.1.0/go.mod h1:eb/Xy6R1GfUrLpPD8AdIxnZ0dbihI6yDITF3btgmnJU=
 github.com/chzyer/logex v1.1.10 h1:Swpa1K6QvQznwJRcfTfQJmTE72DqScAa40E+fbHEXEE=
@@ -91,6 +91,7 @@ github.com/schollz/progressbar/v3 v3.8.6 h1:QruMUdzZ1TbEP++S1m73OqRJk20ON11m6Wqv
 github.com/schollz/progressbar/v3 v3.8.6/go.mod h1:W5IEwbJecncFGBvuEh4A7HT1nZZ6WNIL2i3qbnI0WKY=
 github.com/sirupsen/logrus v1.8.1 h1:dJKuHgqk1NNQlqoA6BTlM1Wf9DOH3NBjQyu0h9+AZZE=
 github.com/sirupsen/logrus v1.8.1/go.mod h1:yWOB1SBYBC5VeMP7gHvWumXLIWorT60ONWic61uBYv0=
+github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e h1:MRM5ITcdelLK2j1vwZ3Je0FKVCfqOLp5zO6trqMLYs0=
 github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e/go.mod h1:XV66xRDqSt+GTGFMVlhk3ULuV0y9ZmzeVGR4mloJI3M=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
