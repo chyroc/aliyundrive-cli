@@ -28,8 +28,10 @@ func (r *CommandUpload) Run() error {
 	if err != nil {
 		return err
 	}
+	if len(files) == 0 {
+		return fmt.Errorf("找不到文件 \"%s\"", file)
+	}
 	go func() {
-
 		for _, file := range files {
 			err = r.upload(file, r.cli.driveID, r.cli.currentFileID)
 			if err != nil {
