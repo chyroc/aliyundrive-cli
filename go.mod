@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/c-bata/go-prompt v0.2.6
-	github.com/chyroc/go-aliyundrive v0.3.0
+	github.com/chyroc/go-aliyundrive v0.5.0
 	github.com/chyroc/go2tv v1.14.0
 	github.com/fatih/color v1.12.0
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3
@@ -15,7 +15,7 @@ require (
 )
 
 require (
-	github.com/chyroc/gorequests v0.30.0 // indirect
+	github.com/chyroc/gorequests v0.32.0 // indirect
 	github.com/chyroc/persistent-cookiejar v0.1.0 // indirect
 	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -38,6 +38,7 @@ require (
 	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/schollz/progressbar/v3 v3.8.6 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
+	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e // indirect
 	golang.org/x/crypto v0.0.0-20220131195533-30dcbda58838 // indirect
 	golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
