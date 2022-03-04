@@ -1,7 +1,7 @@
 github.com/c-bata/go-prompt v0.2.6 h1:POP+nrHE+DfLYx370bedwNhsqmpCUynWPxuHi0C5vZI=
 github.com/c-bata/go-prompt v0.2.6/go.mod h1:/LMAke8wD2FsNu9EXNdHxNLbd9MedkPnCdfpU9wwHfY=
-github.com/chyroc/go-aliyundrive v0.5.0 h1:A7YWu+uOmVS7MIh0iVFCqv/8btv/LzC3+U/NQYLSyGA=
-github.com/chyroc/go-aliyundrive v0.5.0/go.mod h1:hxb8ATuoODZXc0L6g4kFAXtbxeeZaTCIEXeyDgAkRAY=
+github.com/chyroc/go-aliyundrive v0.6.0 h1:ZKo9WGBxv7vtdEZ0eTZRwogTaAUU1WmHOadBa/0PTRM=
+github.com/chyroc/go-aliyundrive v0.6.0/go.mod h1:hxb8ATuoODZXc0L6g4kFAXtbxeeZaTCIEXeyDgAkRAY=
 github.com/chyroc/go2tv v1.14.0 h1:TdKIfgGACQ3HjxhT00+RMTCxwTSsNRV6dttvK0efKHk=
 github.com/chyroc/go2tv v1.14.0/go.mod h1:ABGOBJOi6rEBCTY8hLmbek/lI7vSEipdRPO0QBtgDIo=
 github.com/chyroc/gorequests v0.32.0 h1:+UVJd/qA/b0W0/gzh9K+VGkpTqctrjuVvD2rB6hvlwI=

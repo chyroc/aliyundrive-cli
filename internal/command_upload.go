@@ -58,9 +58,10 @@ func (r *CommandUpload) upload(file string, driveID string, fileID string) error
 	}
 	if !fileInfo.IsDir() {
 		_, err = r.cli.ali.File.UploadFile(context.Background(), &aliyundrive.UploadFileReq{
-			DriveID:  driveID,
-			ParentID: fileID,
-			FilePath: file,
+			DriveID:         driveID,
+			ParentID:        fileID,
+			FilePath:        file,
+			ShowProgressBar: true,
 		})
 		if err != nil {
 			return err
