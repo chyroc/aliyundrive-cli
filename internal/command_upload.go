@@ -39,6 +39,7 @@ func (r *CommandUpload) Run() error {
 				break
 			}
 		}
+		go r.cli.refreshFiles()
 	}()
 	return nil
 }
