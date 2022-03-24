@@ -4,13 +4,13 @@ go 1.17
 
 require (
 	github.com/c-bata/go-prompt v0.2.6
-	github.com/chyroc/go-aliyundrive v0.7.0
+	github.com/chyroc/go-aliyundrive v0.9.0
 	github.com/chyroc/go2tv v1.14.0
 	github.com/fatih/color v1.12.0
 	github.com/golang-collections/collections v0.0.0-20130729185459-604e922904d3
 	github.com/manifoldco/promptui v0.9.0
 	github.com/olekukonko/tablewriter v0.0.5
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.7.1
 	golang.org/x/sys v0.0.0-20220209214540-3681064d5158
 )
 
