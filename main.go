@@ -12,19 +12,19 @@ import (
 )
 
 var (
-	version bool
-	dir     string
+	printVersion bool
+	dir          string
 )
 
 func init() {
 	home, _ := os.UserHomeDir()
 	downloadDir := path.Join(home, "/Downloads/aliyundrive-cli")
-	flag.BoolVar(&version, "version", false, "Print program version")
+	flag.BoolVar(&printVersion, "version", false, "Print program version")
 	flag.StringVar(&dir, "dir", downloadDir, "File download directory")
 	if !flag.Parsed() {
 		flag.Parse()
 	}
-	if version {
+	if printVersion {
 		info, ok := debug.ReadBuildInfo()
 		if ok {
 			println(info.Main.Version)
