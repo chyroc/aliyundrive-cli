@@ -59,7 +59,7 @@ func (r *Cli) Executor(input string) {
 }
 
 func (r *Cli) Completer(doc prompt.Document) (res []prompt.Suggest) {
-	cmd, args := parsePrefixCommand(doc.Text, []string{"cd", "download", "ls", "rm"})
+	cmd, args := parsePrefixCommand(doc.Text, []string{"cd", "download", "ls", "rm", "2tv"})
 	args = strings.ToLower(args)
 	if cmd != "" {
 		for _, v := range r.files {
