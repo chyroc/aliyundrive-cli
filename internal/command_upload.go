@@ -75,8 +75,8 @@ func (r *CommandUpload) upload(file string, driveID string, fileID string) error
 			log.Fatal(err)
 		}
 		response, err := r.cli.ali.File.CreateFolder(context.Background(), &aliyundrive.CreateFolderReq{
-			DriveID:      r.cli.driveID,
-			ParentFileID: r.cli.currentFileID,
+			DriveID:      driveID,
+			ParentFileID: fileID,
 			Name:         fileInfo.Name(),
 		})
 		if err != nil {
@@ -92,6 +92,8 @@ func (r *CommandUpload) upload(file string, driveID string, fileID string) error
 			}
 			fmt.Printf("%s 上传成功.\n", filepath.Join(file, subFile.Name()))
 		}
+		if err := r.cli.checkoutToParentDir(); err != nil {
+			return err
 	}
 	return nil
 }
