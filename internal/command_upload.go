@@ -90,7 +90,6 @@ func (r *CommandUpload) upload(file string, driveID string, fileID string) error
 			if err != nil {
 				return err
 			}
-			fmt.Printf("%s 上传成功.\n", filepath.Join(file, subFile.Name()))
 		}
 		if err := r.cli.checkoutToParentDir(); err != nil {
 			return err
