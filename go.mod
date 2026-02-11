@@ -1,6 +1,8 @@
 module github.com/chyroc/aliyundrive-cli
 
-go 1.23
+go 1.24.0
+
+toolchain go1.24.1
 
 require (
 	github.com/c-bata/go-prompt v0.2.6
